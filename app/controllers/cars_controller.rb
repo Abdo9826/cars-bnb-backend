@@ -47,7 +47,6 @@ class CarsController < ApplicationController
       format.html
       format.json { render json: @car }
     end
-
   end
 
   def destroy
@@ -72,8 +71,7 @@ class CarsController < ApplicationController
         format.json { render json: @car.errors, status: :unprocessable_entity }
       end
     end
-
-  end 
+  end
 
   private
 
@@ -81,4 +79,3 @@ class CarsController < ApplicationController
     params.require(:car).permit(:model, :brand, :user_id, :year_realeased)
   end
 end
-

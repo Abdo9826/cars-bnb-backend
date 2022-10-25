@@ -5,6 +5,8 @@ ruby '3.1.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
+gem 'devise-jwt', '~> 0.10.0'
+gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 

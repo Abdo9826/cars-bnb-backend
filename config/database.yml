@@ -18,8 +18,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: abodyalex1
-  # password: mint
+  # password: abodyalex1
+  password: mint
   # password: robert
   port: 54321
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -62,8 +62,8 @@ test:
   <<: *default
   database: cars_bnb_backend_test
   username: postgres
-  password: abodyalex1
-  # password: mint
+  # password: abodyalex1
+  password: mint
   # password: robert
   port: 54321
 

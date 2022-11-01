@@ -19,9 +19,9 @@ default: &default
   encoding: unicode
   username: postgres
   # password: abodyalex1
-  password: mint
-  # password: robert
-  port: 54321
+  # password: mint
+  password: robert
+  port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -63,9 +63,9 @@ test:
   database: cars_bnb_backend_test
   username: postgres
   # password: abodyalex1
-  password: mint
-  # password: robert
-  port: 54321
+  # password: mint
+  password: robert
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

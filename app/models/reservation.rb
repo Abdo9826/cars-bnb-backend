@@ -4,4 +4,3 @@ class Reservation < ApplicationRecord
 
   validates :city, :reservation_date, :car_id, :user_id, presence: true
 end
-

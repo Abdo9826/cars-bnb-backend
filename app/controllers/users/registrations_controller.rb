@@ -16,8 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
           code: 500,
           message: 'User could not be Created successfully',
           error: resource.errors.full_messages,
-          status: :unprocessable_entity
-        }
+          data: resource
+        }, status: :unprocessable_entity
       }
     end
   end

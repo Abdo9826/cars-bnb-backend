@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
-
-  has_many :cars, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   # whats dependent: :destroy?
   # it means that if the user is deleted, the cars will be deleted as well
 
@@ -9,5 +8,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-  has_many :reservations, dependent: :destroy
 end

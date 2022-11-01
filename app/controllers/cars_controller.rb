@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.includes(:user).all
+    @cars = Car.all
     render json: { code: 200, cars: @cars }
   end
 

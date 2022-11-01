@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations
+    @reservations = current_user.reservations.includes(:car)
     render json: { code: 200,
                    reservations: @reservations }, status: :ok
   end
@@ -27,6 +27,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:car_id, :user_id, :reservation_date, :user_name, :city)
+    params.require(:reservation).permit(:car_id, :user_id, :reservation_date, :city)
   end
 end

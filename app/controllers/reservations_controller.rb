@@ -1,8 +1,13 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations.includes(:car)
-    render json: { code: 200,
-                   reservations: @reservations }, status: :ok
+    if current_user
+      @reservations = current_user.reservations.includes(:car)
+      render json: { code: 200,
+                    reservations: @reservations }, status: :ok
+    else
+      render json: { code: 401,
+                    message: 'You need to sign in or sign up before continuing.' }, status: :unauthorized
+    end
   end
 
   def create
@@ -13,7 +18,8 @@ class ReservationsController < ApplicationController
                      message: 'Reservation created' }, status: :ok
     else
       render json: { code: 400,
-                     message: 'Reservation not created' }, status: :bad_request
+                     message: 'Reservation not created',
+                     error: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

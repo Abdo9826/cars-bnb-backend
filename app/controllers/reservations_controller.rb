@@ -3,10 +3,10 @@ class ReservationsController < ApplicationController
     if current_user
       @reservations = current_user.reservations.includes(:car)
       render json: { code: 200,
-                    reservations: @reservations }, status: :ok
+                     reservations: @reservations }, status: :ok
     else
       render json: { code: 401,
-                    message: 'You need to sign in or sign up before continuing.' }, status: :unauthorized
+                     message: 'You need to sign in or sign up before continuing.' }, status: :unauthorized
     end
   end
 

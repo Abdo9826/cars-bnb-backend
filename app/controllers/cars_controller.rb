@@ -7,16 +7,16 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-     render json: { code: 200, car: @car, notice: 'Car was successfully created.', status: :created }
+      render json: { code: 200, car: @car, notice: 'Car was successfully created.', status: :created }
     else
       render json: { car: @car.errors, notice: 'Car could not be created', status: :unprocessable_entity }
-    end 
+    end
   end
 
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-      render json: { code: 200, notice: 'Car was successfully deleted.', status: :ok }
+    render json: { code: 200, notice: 'Car was successfully deleted.', status: :ok }
   end
 
   private

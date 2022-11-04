@@ -10,13 +10,13 @@
 
 # Create a main sample user.
 
-Car.create(
-  model: "Aston Martin V12 Zagato",
-  brand: "Aston Martin",
-  specifications: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quidem?',
-  featured_image: 'https://www.kindpng.com/picc/m/35-354780_aston-martin-v12-zagato-red-sports-car-png.png',
-  year_released: '2021-10-28'
-)
+# Car.create(
+#   model: "Aston Martin V12 Zagato",
+#   brand: "Aston Martin",
+#   specifications: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quidem?',
+#   featured_image: 'https://www.kindpng.com/picc/m/35-354780_aston-martin-v12-zagato-red-sports-car-png.png',
+#   year_released: '2021-10-28'
+# )
 
 # Car.create(
 #   model: "Yellow Ferrari",
@@ -117,9 +117,9 @@ Car.create(
 
 # 1..5.times do |i|
 #   Reservation.create(
-#     user_id: 9,
+#     user_id: 1,
 #     city: "City #{i}",
-#     car_id: i + 54,
+#     car_id: i + 1,
 #     reservation_date: '2022-12-28',
 #   )
 # end

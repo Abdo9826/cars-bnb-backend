@@ -27,7 +27,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.find(params[:id])
     if @reservation.destroy
       render json: { code: 200, reservation: @reservation,
-                   message: 'Reservation deleted' }, status: :ok
+                     message: 'Reservation deleted' }, status: :ok
     else
       render json: { code: 400, reservation: @reservation,
                      message: 'Reservation not deleted',

@@ -18,7 +18,7 @@ class CarsController < ApplicationController
     if @car.destroy
       render json: { code: 200, car: @car, notice: 'Car was successfully deleted.', status: :ok }
     else
-      render json: { code: 500, car: @car, notice: "car was not successsfully deleted", status: :failed }
+      render json: { code: 500, car: @car, notice: 'car was not successsfully deleted', status: :failed }
     end
   end
 

@@ -5,6 +5,7 @@ class CreateReservations < ActiveRecord::Migration[7.0]
       t.string :city
       t.references :user, null: false, foreign_key: true
       t.references :car, null: false, foreign_key: true
+      t.index [:user_id, :car_id], unique: true
 
       t.timestamps
     end

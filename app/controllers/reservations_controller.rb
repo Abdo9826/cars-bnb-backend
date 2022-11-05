@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = current_user.reservations.create(reservation_params)
+    @reservation = current_user.reservations.new(reservation_params)
     if @reservation.save
       render json: { code: 200,
                      reservation: @reservation,
@@ -25,9 +25,14 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = current_user.reservations.find(params[:id])
-    @reservation.destroy
-    render json: { code: 200,
-                   message: 'Reservation deleted' }, status: :ok
+    if @reservation.destroy
+      render json: { code: 200, reservation: @reservation,
+                     message: 'Reservation deleted' }, status: :ok
+    else
+      render json: { code: 400, reservation: @reservation,
+                     message: 'Reservation not deleted',
+                     error: @reservation.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
